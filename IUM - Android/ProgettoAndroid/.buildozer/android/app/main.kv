@@ -1,0 +1,114 @@
+<MyTextInput@TextInput>:
+    write_tab: False
+    multiline: False
+    size_hint_x: 25
+
+<MyLabel@Label>:
+    color: [0, 0, 0, 1]
+    size_hint_x: 25
+    bold: True
+
+<LabelInfo@Label>:
+    color: [0, 0, 0, 1]
+    bold: True
+
+<MainScreen>:
+    tab_panel: tab_panel
+    reg_tab: reg_tab
+    login_tab: login_tab
+    menu_tab: menu_tab
+    cart_tab: cart_tab
+    order_tab: order_tab
+    info_tab: info_tab
+    TabbedPanel:
+        background_image: 'pizza.jpg'
+        id: tab_panel
+        do_default_tab: False
+
+        TabbedPanelItem:
+            text: 'LOGIN'
+            id: login_tab
+            f_username: username
+            f_password: password
+            GridLayout:
+                cols: 2
+                row_force_default: True
+                row_default_height: 50
+                MyLabel:
+                    text: 'Username'
+                MyTextInput:
+                    id: username
+                MyLabel:
+                    text: 'Password'
+                MyTextInput:
+                    id: password
+                    password: True
+                MyLabel:
+                    text: ''
+                MyLabel:
+                    text: ''
+                MyLabel:
+                    text: ''
+                MyLabel:
+                    text: ''
+                Button:
+                    text: 'LOGIN'
+                    on_press: root.login()
+                Button:
+                    text: 'REGISTER'
+                    on_press: root.goRegister()
+        TabbedPanelItem:
+            text: 'REGISTER'
+            id: reg_tab
+            GridLayout:
+                cols: 2
+                row_force_default: True
+                row_default_height: 50
+                MyLabel:
+                    text: 'Username'
+                MyTextInput:
+                    id: userReg
+                MyLabel:
+                    text: 'Password'
+                MyTextInput:
+                    id: passReg
+                    password: True
+                MyLabel:
+                    text: 'Address'
+                MyTextInput:
+                    id: addrReg
+                MyLabel:
+                    text: 'Phone'
+                MyTextInput:
+                    id: phoneReg
+                MyLabel:
+                    text: ''
+                Button:
+                    text: 'REGISTER'
+                    on_press: root.register()
+        TabbedPanelItem:
+            text: 'MENU'
+            id: menu_tab
+        TabbedPanelItem:
+            text: 'CART'
+            id: cart_tab
+        TabbedPanelItem:
+            text: 'ORDERS'
+            id: order_tab
+        TabbedPanelItem:
+            text: 'INFO'
+            id: info_tab
+            BoxLayout:
+                orientation: 'vertical'
+                LabelInfo:
+                    id: info_usr
+                    text: ''
+                LabelInfo:
+                    id: info_addr
+                    text: ''
+                LabelInfo:
+                    id: info_phone
+                    text: ''
+                Button:
+                    text: 'Logout'
+                    on_press: root.logout()

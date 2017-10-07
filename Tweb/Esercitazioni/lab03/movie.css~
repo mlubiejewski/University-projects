@@ -1,0 +1,123 @@
+/*Mateusz Lubiejewski*/
+body{
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/background.png");
+	font-size: 8pt;
+	font-family: Verdana, Tahoma, sans-serif;
+	margin: 0px;
+}
+
+h1{
+	font-size: 24pt;
+	font-family: Tahoma, Verdana, sans-serif;
+	text-align: center;
+	text-shadow: 3px 3px #999999;
+}
+
+#banner{
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/bannerbg.png");
+	background-repeat: repeat-x;
+	width: 100%;
+}
+
+#main{
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 10px;
+	border-color: grey;
+	overflow: hidden;
+}
+
+#right{
+	float: right;
+	width: 250px;
+	background-color: #A2B964;
+	font-family: Arial, sans-serif;
+}
+
+#right-overview{
+	padding: 10pt;
+}
+
+dt{
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+ul{
+	list-style-type: none;
+	text-align: left;
+}
+
+#left{
+	width: 550px;
+}
+
+#rotten{
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/rbg.png");
+	background-repeat: repeat-x;
+	height: 83px;
+	width: 100%;
+	font-size: 48pt;
+	font-weight: bold;
+	color: red;
+	text-align: left;
+}
+
+#percento{
+	vertical-align: top; 
+}
+
+#colleft, #colright{
+	float: left;
+	width: 47%;
+	margin-left: 2%;
+}
+
+#colright{
+	margin-right: 2%;
+}
+
+#colleft p:nth-child(odd), #colright p:nth-child(odd){
+	background-color: #E8DC9B;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: grey;
+}
+
+p:nth-child(even){
+	font-style: italic;
+	margin-bottom: 20pt;
+}
+
+
+
+q{
+	padding: 8px;
+	font-weight: bold;
+}
+
+#last{
+	text-align: center;
+}
+
+#footer{
+	float: right;
+	width: 100%;
+	background-color: #A2B964;
+	padding: 5px;
+}
+
+#validator{
+	bottom: 10px;
+	right: 10px;
+	position: fixed;
+	opacity: 0.5;
+}
+
+#image{
+	float: left;
+}

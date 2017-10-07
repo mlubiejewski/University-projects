@@ -1,0 +1,322 @@
+__version__ = "1.0"
+
+from kivy.app import App
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.popup import Popup
+from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.spinner import Spinner
+import datetime
+from kivy.uix.label import Label
+from kivy.uix.image import Image
+
+presentation = Builder.load_file("main.kv")
+
+
+class MainScreen(BoxLayout):
+    tab_panel = ObjectProperty(None)
+    reg_tab = ObjectProperty(None)
+    login_tab = ObjectProperty(None)
+    menu_tab = ObjectProperty(None)
+    cart_tab = ObjectProperty(None)
+    order_tab = ObjectProperty(None)
+    info_tab = ObjectProperty(None)
+
+    logged_user = None
+
+    def initialize(self):
+        if self.logged_user is None:
+            self.tab_panel.remove_widget(self.info_tab)
+
+    def menu(self):
+        self.initialize()
+        self.cart = []
+        in_file = open("menu.txt", "r")
+        data = list(in_file)
+        layout = GridLayout(cols=3)
+        for row in data:
+            menu_row = row.split(',', 2)
+            layout.add_widget(Label(text='[b][color=#000000]' + menu_row[0] + '[/color][/b]', markup = True))
+            layout.add_widget(Label(text='[b][color=#000000]' + menu_row[1] + '[/color][/b]', markup = True))
+            btn_add = Button(text='Add')
+            btn_add.fbind('on_press', self.add_to_cart, menu_row)
+            layout.add_widget(btn_add)
+        self.menu_tab.add_widget(layout)
+
+    def add_to_cart(self, menu_row, btn_add):
+        found = False
+	total = 0
+        for i, row in enumerate(self.cart):
+            cart_row = row.split(',', 3)
+            qnt_row = int(cart_row[1])
+            if cart_row[0] == menu_row[0]:
+                found = True
+                qnt_row += 1
+                total = float(menu_row[1]) * int(qnt_row)
+                self.cart[i] = ",".join([str(cart_row[0]), str(qnt_row), str(total)])
+        if not found:
+            qnt = 1
+            total = int(qnt) * float(menu_row[1])
+            self.cart.append(menu_row[0] + ',' + str(qnt) + ',' + str(total))
+        self.print_cart()
+
+    def rm_to_cart(self, cart_rowdlt, btn_dlt):
+        for i, row in enumerate(self.cart):
+            cart_row = row.split(',', 3)
+            qnt_row = int(cart_row[1])
+            if cart_row[0] == cart_rowdlt[0]:
+                qnt_row -= 1
+                if qnt_row == 0:
+                    del self.cart[i]
+                else:
+                    total = float(cart_rowdlt[1]) * int(qnt_row)
+                    self.cart[i] = ",".join([str(cart_row[0]), str(qnt_row), str(total)])
+        self.print_cart()
+
+    def print_cart(self):
+        layout = GridLayout(cols=4)
+        total_cart = 0
+        for row in self.cart:
+            cart_row = row.split(',', 3)
+            total_cart += float(cart_row[2])
+            layout.add_widget(Label(text=cart_row[0], color = [0, 0, 0, 1], bold = True))
+            layout.add_widget(Label(text=cart_row[1], color = [0, 0, 0, 1], bold = True))
+            layout.add_widget(Label(text=cart_row[2], color = [0, 0, 0, 1], bold = True))
+            btn_dlt = Button(text='Delete')
+            btn_dlt.fbind('on_press', self.rm_to_cart, cart_row)
+            layout.add_widget(btn_dlt)
+        delivery_cost = 0
+        if total_cart < 15:
+            delivery_cost = 2.5
+        if total_cart > 0:
+            total_order = total_cart + delivery_cost
+            layout.add_widget(Label(text='Costo ordine ' + str(total_cart), color = [0, 0, 0, 1], bold = True))
+            layout.add_widget(Label(text='Costo consegna ' + str(delivery_cost), color = [0, 0, 0, 1], bold = True))
+            layout.add_widget(Label(text='Totale ordine ' + str(total_order), color = [0, 0, 0, 1], bold = True))
+            btn_show = Button(text='Show order')
+            btn_show.bind(on_press=self.show_order)
+            layout.add_widget(btn_show)
+        self.cart_tab.add_widget(layout)
+
+    def order_number(self):
+        in_file = open("order_number.txt", "r")
+        data = list(in_file)
+        for row in data:
+             return row
+
+    def add_order(self):
+        num = int(self.order_number())
+        #print num
+        num += 1
+        out_file = open("order_number.txt", "w")
+        out_file.write(str(num))
+
+    def show_order(self, btn_show):
+        if self.logged_user is not None:
+            in_file = open("user.txt", "r")
+            data = list(in_file)
+            now = datetime.datetime.now()
+            date = datetime.datetime(year=2016, month=1, day=1, hour=now.hour, minute=now.minute, second=now.second)
+            delay = datetime.timedelta(minutes=30)
+            delivery = date + delay
+            time = delivery.strftime('%H:%M')
+	    address = ''
+            for row in data:
+                user = row.split(',', 4)
+                if user[0] == self.logged_user:
+                    address = user[2]
+            spinner = Spinner(text='Contanti', values=('Contanti', 'Carta di credito', 'PayPal', 'Buoni pasto'))
+            grid = GridLayout(cols=2)
+            grid.add_widget(Label(text='Orario di consegna'))
+            grid.add_widget(TextInput(text=time))
+            grid.add_widget(Label(text='Luogo di consegna'))
+            grid.add_widget(TextInput(text=address))
+            grid.add_widget(Label(text='Pagamento'))
+            grid.add_widget(spinner)
+            btn_confirm = Button(text='Confirm order')
+            btn_confirm.bind(on_press=self.confirm_order)
+            grid.add_widget(btn_confirm)
+            content = grid
+            self.popup = Popup(title='Confirm order', content=content, size_hint=(None, None), size=(500, 400))
+            self.popup.open()
+        else:
+            content = Label(text='You must be logged to submit order')
+            self.popup = Popup(title='Confirm order', content=content, size_hint=(None, None), size=(400, 200))
+            self.popup.open()
+
+    def confirm_order(self, btn_confirm):
+        self.popup.dismiss()
+        timestamp = str(datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S'))
+        out_file = open("order.txt", "a")
+        num = self.order_number()
+        out_file.write(str(num) + ',' + timestamp + ',' + self.logged_user + '\n')
+        for row in self.cart:
+            cart_row = row.split(',', 3)
+            print_cart_row = cart_row[0] + ',' + cart_row[1] + ',' + cart_row[2] + ';'
+            out_file.write(print_cart_row)
+        out_file.write('\n')
+        out_file.close()
+        del self.cart[:]
+        self.add_order()
+        self.print_cart()
+        self.print_order()
+
+    def user_exist(self, username):
+        in_file = open("user.txt", "r")
+        data = list(in_file)
+        for row in data:
+            user = row.split(',', 4)
+            if user[0] == username:
+                return True
+        return False
+
+    def print_order(self):
+        layout = GridLayout(cols=4)
+        in_file = open("order.txt", "r")
+        data = list(in_file)
+        for i, row in enumerate(data):
+            if i % 2 == 0:
+                order = row.split(',', 3)
+                order[2] = order[2].strip()
+                if order[2] == self.logged_user:
+                    layout.add_widget(Label(text=order[0], color=[0, 0, 0, 1], bold = True))
+                    layout.add_widget(Label(text=order[1], color=[0, 0, 0, 1], bold = True))
+                    vote = self.get_vote(order[0])
+                    if vote >= 0:
+                        vote = vote.strip()
+                        print_vote = 'voto' + str(vote) + '.png'
+                        layout.add_widget(Image(source=print_vote))
+                    else:
+                        btn_vote = Button(background_normal= 'voto0.png')
+                        btn_vote.fbind('on_press', self.vote_order, order[0])
+                        layout.add_widget(btn_vote)
+            	elif order[2] == self.logged_user:
+		        pizzas = row.split(';')
+		        btn_detail = Button(text='Order detail')
+		        btn_detail.fbind('on_press', self.show_detail, pizzas)
+		        layout.add_widget(btn_detail)
+        self.order_tab.add_widget(layout)
+
+    def get_vote(self, num_order):
+        in_file = open("votes.txt", "r")
+        data = list(in_file)
+        for row in data:
+            vote = row.split(',', 2)
+            if vote[0] == num_order:
+                return vote[1]
+        return -1
+
+    def vote_order(self, num_order, btn_vote):
+        grid = GridLayout(cols=6)
+        grid.add_widget(Label(text='Voto'))
+        btn_vote1 = Button(background_normal= 'star.png')
+        btn_vote1.fbind('on_press', self.submit_vote, '1', num_order)
+        btn_vote2 = Button(background_normal= 'star.png')
+        btn_vote2.fbind('on_press', self.submit_vote, '2', num_order)
+        btn_vote3 = Button(background_normal= 'star.png')
+        btn_vote3.fbind('on_press', self.submit_vote, '3', num_order)
+        btn_vote4 = Button(background_normal= 'star.png')
+        btn_vote4.fbind('on_press', self.submit_vote, '4', num_order)
+        btn_vote5 = Button(background_normal= 'star.png')
+        btn_vote5.fbind('on_press', self.submit_vote, '5', num_order)
+        grid.add_widget(btn_vote1)
+        grid.add_widget(btn_vote2)
+        grid.add_widget(btn_vote3)
+        grid.add_widget(btn_vote4)
+        grid.add_widget(btn_vote5)
+        content = grid
+        self.popup_vote = Popup(title='Vote',
+                      content=content,
+                      size_hint=(None, None), size=(600, 200))
+        self.popup_vote.open()
+
+    def submit_vote(self, vote, num, btn_vote):
+        print_vote = str(num) + ',' + str(vote) + '\n'
+        out_file = open("votes.txt", "a")
+        out_file.write(print_vote)
+        out_file.close()
+        self.print_order()
+        self.popup_vote.dismiss()
+
+    def show_detail(self, pizzas, btn_detail):
+        grid = GridLayout(cols=3)
+        for item in pizzas:
+            if item != '\n':
+                pizza = item.split(',', 3)
+                grid.add_widget(Label(text=pizza[0]))
+                grid.add_widget(Label(text=pizza[1]))
+                grid.add_widget(Label(text=pizza[2]))
+        content = grid
+        self.popup_detail = Popup(title='Info order', content=content, size_hint=(None, None), size=(600, 600))
+        self.popup_detail.open()
+
+    def login(self):
+        flag = 0
+        in_file = open("user.txt", "r")
+        data = list(in_file)
+        for row in data:
+            user = row.split(',', 4)
+            if user[0] == self.ids.username.text:
+                if user[1] == self.ids.password.text:
+                    self.logged_user = user[0]
+                    self.tab_panel.add_widget(self.info_tab)
+                    self.info_tab.text = user[0]
+                    self.ids.info_usr.text = user[0]
+                    self.ids.info_addr.text = user[2]
+                    self.ids.info_phone.text = user[3]
+                    #print self.ids.info_addr.text
+                    self.tab_panel.switch_to(self.menu_tab)
+                    self.tab_panel.remove_widget(self.login_tab)
+                    self.tab_panel.remove_widget(self.reg_tab)
+                else:
+                    flag = 1
+            else:
+                error_msg = 'Username or password wrong'
+        if flag:
+            content = Label(text=error_msg)
+            popup_error = Popup(title='Login error', content=content, size_hint=(None, None), size=(300, 200))
+            popup_error.open()
+        in_file.close()
+        self.print_order()
+
+    def logout(self):
+        self.logged_user = None
+        self.initialize()
+        self.tab_panel.add_widget(self.login_tab)
+        self.tab_panel.add_widget(self.reg_tab)
+        self.tab_panel.switch_to(self.login_tab)
+        self.print_order()
+
+    def register(self):
+        username = self.ids.userReg.text
+        password = self.ids.passReg.text
+        address = self.ids.addrReg.text
+        phone = self.ids.phoneReg.text
+        if not self.user_exist(username):
+            printReg = username + ',' + password + ',' + address + ',' + phone + '\n'
+            out_file = open("user.txt", "a")
+            out_file.write(printReg)
+            out_file.close()
+            self.tab_panel.switch_to(self.login_tab)
+        else:
+            content = Label(text='Username already exist!')
+            popup = Popup(title='Info registration',
+                content=content,
+                size_hint=(None, None), size=(400, 150))
+            popup.open()
+
+    def goRegister(self):
+        self.tab_panel.switch_to(self.reg_tab)
+
+    pass
+
+class PizzeriaApp(App):
+    def build(self):
+        self.icon = 'myicon.png'
+        return MainScreen()
+
+if __name__ == '__main__':
+    PizzeriaApp().run()

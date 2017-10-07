@@ -1,0 +1,72 @@
+/*Nome e congome: Mateusz Lubiejewski
+  Corso: Tecnologie Web (6 cfu) - a.a. 2015/16
+  Descrizione: Questo è il file .css che contiene lo stile del sito. */
+
+body {
+	background-color: #dad9d4;
+	font-family: Verdana, sans-serif;
+	color: black;
+}
+
+#frame {
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+#banner, #w3c {
+	background-color: black;
+	color: white;
+	padding: 1em;
+}
+
+#main {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	padding: 1em;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*prima riga della tabella*/
+tr:first-child {
+    font-weight: bold;
+} 
+/*righe dispari*/
+tr:nth-child(odd) { 
+	background-color: white;
+
+}
+/*righe pari*/
+tr:nth-child(even) {
+	background-color: #dad9d4;
+}
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+	width: 24em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+filedset {
+	padding: 0px;
+}
+
+input {
+	border: 2px solid #777777;
+	border-bottom-style: hidden;
+	border-right-style: hidden;
+}
+/*Colore diverso per il bottone di submit*/
+input.submit {
+	background-color: #dad9d4;
+}

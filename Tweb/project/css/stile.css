@@ -1,0 +1,159 @@
+/*Nome e congome: Mateusz Lubiejewski
+    Corso: Tecnologie Web (6 cfu) - a.a. 2015/16
+    Descrizione: Questa è il foglio di stile che viene applicato al sito, oltre a quello di bootstrap */
+
+body {
+	background-image: url("http://tweb-lubiejewski.rhcloud.com/progetto/img/simple-green-background.jpg");
+	color: black;
+	margin: 0px;
+}
+
+header {
+	margin-bottom: 40px;
+	font-weight: bold;
+}
+h1{
+	font-family: Verdana, sans-serif;
+	font-weight: bold;	
+}
+h2,h3,h4,h5,h6{
+	text-align: center;
+}
+p{
+	text-align: left;
+	padding: 5px;
+}
+
+#recensioni p{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+#recensioni p:nth-child(even){
+	font-style: italic;
+	margin-bottom: 20pt;
+}
+
+.recensione{
+  
+  margin-bottom: 20px;  
+}
+
+.recensione-in{
+  border-style: solid;
+  border-width: 3px;
+  margin-top: -2%;
+  margin-left: 2%;
+
+}
+.recensione-right{
+  width: 70%;
+  float: right;
+  border-left-style: solid;
+  border-width: 3px;
+}
+
+p img{
+	float: left;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+/*
+@media (min-width: 1200px) {
+  .container {
+    	width: 1000px;
+	height: 100%;
+  }
+}*/
+/*
+.container{
+	width: 70%;
+}*/
+
+#left{
+	width: 70%;
+	float: left;
+}
+
+#right{
+	float: right;
+	width: 25%;
+}
+#right p{
+	text-align: center;
+}
+
+#preferiti{
+	padding-left: 1%;
+	padding-right: 5%;
+ /* height: 670px;*/
+}
+#frigo{
+	background-image: url("http://tweb-lubiejewski.rhcloud.com/progetto/img/fridge2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 250px;
+	height: 550px;
+  /*height: 90%;*/
+	padding-top: 65px;
+  /*padding-top: 30%;*/
+}
+.row{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+li a {
+	color: black;
+}
+
+.float-img{
+	float: left;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+#validator{
+	bottom: 10px;
+	right: 10px;
+	position: fixed;
+	opacity: 0.5;
+}
+
+input[type="submit"] {
+	background-color: #111;
+	color: white;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"], button {
+	color: black;
+}
+
+form strong {
+	float: left;
+	width: 7em;
+}
+
+select, textarea{
+	color: black;
+}
+
+ul{
+	list-style-type: none;
+	text-align: left;
+	font-size: 16px;
+	padding-top: 35px;
+}
+
+.beer{
+	margin-bottom: 50px;
+}
+
+button a{
+  color: black;
+}

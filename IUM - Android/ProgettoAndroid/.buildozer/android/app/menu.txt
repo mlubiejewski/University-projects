@@ -1,0 +1,14 @@
+Marinara, 4
+Margherita, 4.5
+Diavola, 6
+Salsiccia, 6
+Napoli, 5.5
+Bismark, 6.5
+Vegetariana, 6
+Parmigiana, 7
+Crudo, 6.5
+Quattro Stagioni, 6
+Coca Cola 33cl, 2
+Heineken, 2.50
+Nastro Azzurro, 2.50
+Becks, 2.5

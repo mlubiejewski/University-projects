@@ -1,0 +1,60 @@
+﻿HELP: progetto di laboratorio: aggiornato l'11/12/2015
+
+Per quanto riguarda la distribuzione del software dell'applicazione "battaglia navale" su JVM diverse consiglio 
+quanto segue:
+
+    dedicare una JVM a ciascuno giocatore per gestire il suo terminale di gioco, che mantiene una copia locale dello stato del gioco e gestisce 
+l'interfaccia utente del giocatore. L'applicazione ha un suo model, controller e vista per interagire con il giocatore.
+    dedicare una JVM ad un gestore del gioco,
+che contiene lo stato (remoto) e le regole del gioco. 
+
+Il gestore del gioco inizializza lo stato del gioco, gestisce i turni dei giocatori dando il controllo ai terminali
+secondo le regole del gioco, aggiorna lo stato del gioco man mano che i giocatori eseguono azioni, e chiude la partita identificando il vincitore. 
+
+
+Quando un utente ha il turno e spara, il suo terminale invia al gestore del gioco le informazioni sull'azione dell'utente, in modo da far aggiornare lo stato remoto del gioco.
+In risposta il gestore del gioco gli invia i dati aggiornati dello stato del gioco.
+
+Un vostro compagno di classe ha gentilmente pubblicato sul forum studenti il 
+codice di un'applicazione java in cui si vede:
+
+1) Come rendere remoto un oggetto senza estendere UnicastRemoteObject (risolve il problema della ereditarietà multipla, 
+da UnicastRemoteObject e da Observable, del modello remoto) 
+
+2) Come far partire le applicazioni remote da codice java leggendo le policy (quindi evitando di lanciarle da riga 
+di comando).
+
+ Riporto il codice del suo esempio, che voi dovrete adattare al caso vostro, nel seguito:
+
+
+public static void main(String[] args) {
+        
+	System.setProperty("java.security.policy", "file:/E:\\NetBeansPorjects\\ProgettoProg3\\src\\battagliaNavaleRMI\\mypolicy.policy");
+
+        System.out.println("policy : " + System.getProperty("java.security.policy"));
+
+ 
+        if (System.getSecurityManager() == null) {
+            
+		System.setSecurityManager(new SecurityManager());
+       
+	 }
+       
+	 try {
+            
+		Registry rmiRegistry = LocateRegistry.createRegistry(9999);
+           
+		 ModelServerInterface rmiService = (ModelServerInterface) UnicastRemoteObject.exportObject(new ModelServer(), 9999);
+            
+		rmiRegistry.bind("RmiService", rmiService);
+       
+	 } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    
+}
+
+
+
+
+Ultime modifiche: venerdì, 11 dicembre 2015, 13:00

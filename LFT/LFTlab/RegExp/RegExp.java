@@ -1,0 +1,3 @@
+interface RegExp {
+    NFA compile();
+}

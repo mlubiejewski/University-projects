@@ -1,0 +1,19 @@
+/* 
+qui bisogna specificare i grant per gli IP dei client che possono comunicare con il server. Nel mio caso l'IP è dinamico
+   e ho riportato un paio di IP che sono stati associati al mio client in passato....
+     permission java.net.SocketPermission "10.0.10.99:1024-65535", "accept,listen,resolve,connect";
+     
+       permission java.net.SocketPermission "127.0.0.1:1024-65535", "accept,listen,resolve, connect";
+       permission java.net.SocketPermission "172.16.15.1-999:1024-65535", "accept,listen,resolve,connect";
+       permission java.net.SocketPermission "10.0.10.99:1024-65535", "accept,listen,resolve,connect";
+	   
+	   permission java.net.SocketPermission "127.0.0.1:2000-65535", "accept,listen,resolve,connect";
+	   permission java.net.SocketPermission "localhost:2000-65535", "accept,listen,resolve,connect";
+
+
+   */
+
+grant {
+  permission java.security.AllPermission;
+};
+
