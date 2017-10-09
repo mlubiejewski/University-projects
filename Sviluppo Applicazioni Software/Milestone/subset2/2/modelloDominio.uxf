@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>369</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Manche
+--
+numero</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>657</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Giocatore
+--
+nome
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>378</y>
+      <w>405</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..N
+ha ^
+appartiene v</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0;430.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>477</y>
+      <w>99</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>Partita
+--
+nome
+Modalità
+Proprietà</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>477</x>
+      <y>513</y>
+      <w>144</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=1..n
+iscritto a ^
+ha iscritti v
+</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1215</x>
+      <y>396</y>
+      <w>234</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Una Partita ha 1..n /iscritti/, altrimenti non esiste.
+--
+Un Giocatore puo' /creare/ al massimo 1 Partita
+--
+Una Partita creata ha 1..n /manche/, altrimenti non esiste.
+--
+Un Giocatore può esaminare da 1..N /classifiche/
+--
+Una classifica può essere esaminata da 1..N /giocatori/
+
+style=wordwrap
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>1017</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Squadre
+--
+nome
+aperta
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1098</x>
+      <y>909</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Risultati
+--
+Elenco
+Punteggi
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>225</x>
+      <y>522</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Stanza
+--
+nome
+indirizzo
+porta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>1017</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>GiocatoreRegistrato
+--
+nome utente
+nome account
+password
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>1053</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+possiede &gt;
+&lt; proprietario
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>1017</y>
+      <w>216</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+iscritto a &gt;
+&lt; ha iscritti 
+</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>477</x>
+      <y>711</y>
+      <w>45</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1	</panel_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>585</y>
+      <w>171</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+gestisce v
+proprietario ^</panel_attributes>
+    <additional_attributes>170.0;130.0;10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>585</y>
+      <w>261</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+partecipa v
+partecipanti ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0;270.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>720</y>
+      <w>603</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..N
+m2=1..N
+richiede &gt;
+&lt; vengono visualizzati</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0;650.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>774</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Richiesta
+--
+id
+esito
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>702</y>
+      <w>297</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0 .. N
+m2= 1
+risponde ^
+manda v
+
+</panel_attributes>
+    <additional_attributes>240.0;80.0;240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>963</x>
+      <y>648</y>
+      <w>90</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0 .. N
+m2=1
+inviata a  ^
+gestisce v
+
+</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>468</y>
+      <w>531</w>
+      <h>459</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0.. 1
+ha &gt;
+&lt; appartiene</panel_attributes>
+    <additional_attributes>10.0;20.0;550.0;20.0;550.0;490.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>477</y>
+      <w>243</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..N
+ospita &gt;
+&lt; si trova
+
+</panel_attributes>
+    <additional_attributes>10.0;60.0;70.0;60.0;70.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>585</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>GiocatoreProprietario
+--
+nome
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>648</y>
+      <w>261</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0 .. 1
+m2=1	</panel_attributes>
+    <additional_attributes>270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>504</y>
+      <w>306</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1
+crea ^
+proprietario v
+
+</panel_attributes>
+    <additional_attributes>240.0;90.0;240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>531</y>
+      <w>189</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0 .. 1
+m2=0..1
+avvia ^
+è avviata v
+
+</panel_attributes>
+    <additional_attributes>190.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>540</y>
+      <w>117</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+riceve notifica ^
+notifica avvio v
+</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;80.0;20.0;80.0;20.0;120.0</additional_attributes>
+  </element>
+</diagram>

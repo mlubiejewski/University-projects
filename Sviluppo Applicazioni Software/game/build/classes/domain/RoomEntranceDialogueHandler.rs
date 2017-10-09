@@ -1,0 +1,1 @@
+unoxtutti.domain.RoomEntranceDialogueHandler

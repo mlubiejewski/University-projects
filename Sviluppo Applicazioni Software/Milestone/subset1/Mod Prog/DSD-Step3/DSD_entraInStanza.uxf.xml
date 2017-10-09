@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>234</x>
+      <y>0</y>
+      <w>189</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>unoxtuttiCtrl:
+GiocareAUnoXTuttiController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>27</y>
+      <w>27</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1660.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>297</x>
+      <y>45</y>
+      <w>18</w>
+      <h>1107</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>9</x>
+      <y>45</y>
+      <w>306</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+entraInStanza(roomName, address, port)</panel_attributes>
+    <additional_attributes>320.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>639</x>
+      <y>0</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;metaclass&gt;&gt;
+RemoteRoom</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>693</x>
+      <y>81</y>
+      <w>18</w>
+      <h>945</h>
+    </coordinates>
+    <panel_attributes>
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>27</y>
+      <w>27</w>
+      <h>1053</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>63</y>
+      <w>405</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+createRemoteRoom(player, roomName, address, port)</panel_attributes>
+    <additional_attributes>430.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>1008</y>
+      <w>405</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+room</panel_attributes>
+    <additional_attributes>10.0;20.0;430.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1287</x>
+      <y>0</y>
+      <w>108</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;metaclass&gt;&gt;
+P2PConnection</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1332</x>
+      <y>36</y>
+      <w>27</w>
+      <h>729</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;790.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>81</y>
+      <w>648</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+connectToHost(player, address, port)</panel_attributes>
+    <additional_attributes>700.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1332</x>
+      <y>99</y>
+      <w>18</w>
+      <h>621</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>90</y>
+      <w>153</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+new(address, port)</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1476</x>
+      <y>90</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>sock: Socket</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1530</x>
+      <y>126</y>
+      <w>144</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>p2p: P2PConnection</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>126</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+new(sock, clientside)</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1593</x>
+      <y>144</y>
+      <w>27</w>
+      <h>1440</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>171</y>
+      <w>18</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>layer=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1827</x>
+      <y>243</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>p2p.sockIn:
+ObjectInputStream</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1971</x>
+      <y>288</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>p2p.myHelper:
+P2PHelper</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>279</y>
+      <w>387</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+new()
+layer=10</panel_attributes>
+    <additional_attributes>410.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>315</y>
+      <w>423</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+run()</panel_attributes>
+    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>153</y>
+      <w>270</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+connect()</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2043</x>
+      <y>333</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Indichiamo diversi thread con colori diversi
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2007</x>
+      <y>315</y>
+      <w>27</w>
+      <h>486</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1881</x>
+      <y>279</y>
+      <w>27</w>
+      <h>495</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;530.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>342</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>1368</x>
+      <y>459</y>
+      <w>684</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>alt
+halign=left
+--
+p2pMsg
+is bye message
+AND p2p conn
+is NOT closing
+
+-.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1881</x>
+      <y>432</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1782</x>
+      <y>477</y>
+      <w>216</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Dettagliato altrove*
+Vedi il DSD di ServerRoom_run per il dettaglio della chiusura di una P2PConnection
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>1359</x>
+      <y>414</y>
+      <w>702</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>do... while 
+NOT closing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2007</x>
+      <y>333</y>
+      <w>18</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta
+layer=5
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>702</y>
+      <w>423</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+doClose()
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>720</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1593</x>
+      <y>729</y>
+      <w>432</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+fg=magenta</panel_attributes>
+    <additional_attributes>460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>414</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+readObject()
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>432</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+p2pMsg
+fg=magenta</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>576</y>
+      <w>18</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>558</y>
+      <w>423</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+notifyMessageReceived(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>1377</x>
+      <y>585</y>
+      <w>504</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>for all rec
+in receivers[p2pMsg.getName()]
+halign=left
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1764</x>
+      <y>594</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>rec:
+MessageReceiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1809</x>
+      <y>621</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>630</y>
+      <w>225</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+updateMessageReceived(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1809</x>
+      <y>648</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>675</y>
+      <w>414</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+fg=magenta</panel_attributes>
+    <additional_attributes>440.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>702</y>
+      <w>648</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+p2p</panel_attributes>
+    <additional_attributes>10.0;20.0;700.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1125</x>
+      <y>783</y>
+      <w>198</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>entranceHandler:
+RoomEntranceDialogueHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>918</x>
+      <y>738</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>room:
+RemoteRoom</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>738</y>
+      <w>234</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+new(player, roomName, p2p)
+layer=10</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>765</y>
+      <w>27</w>
+      <h>828</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>810</y>
+      <w>27</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;680.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>783</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+new(this)
+layer=10</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>774</y>
+      <w>288</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+enter()</panel_attributes>
+    <additional_attributes>300.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>927</y>
+      <w>243</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+startDialogue(player. roomName)</panel_attributes>
+    <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>972</x>
+      <y>792</y>
+      <w>18</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1206</x>
+      <y>945</y>
+      <w>18</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>layer=10</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>963</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>972</y>
+      <w>396</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+sendMessage(roomEntranceRequest)</panel_attributes>
+    <additional_attributes>420.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1206</x>
+      <y>819</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>819</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+super(BEFORE_REQUEST)</panel_attributes>
+    <additional_attributes>10.0;30.0;50.0;30.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1422</x>
+      <y>819</y>
+      <w>198</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>stato iniziale
+(vedi RoomEntranceDialogueState)
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>873</y>
+      <w>630</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+addMessageReceivedObserver(this, roomUpdate)</panel_attributes>
+    <additional_attributes>680.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>891</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>900</y>
+      <w>243</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+addStateChangeObserver(this)</panel_attributes>
+    <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1206</x>
+      <y>918</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>945</y>
+      <w>396</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+addMessageReceivedObserver(this, roomEntranceReply)</panel_attributes>
+    <additional_attributes>420.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1593</x>
+      <y>990</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>999</y>
+      <w>243</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>1008</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>324</x>
+      <y>1044</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Operazioni GUI*
+La GUI mostra all'attore che è in attesa di entrare (es. tramite clessidra o simili)
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1035</y>
+      <w>396</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+updateMessageReceived(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1206</x>
+      <y>1053</y>
+      <w>18</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1062</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+evolveState(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>20.0;30.0;50.0;30.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1080</y>
+      <w>18</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>1098</y>
+      <w>333</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+currentState = currentState.nextState(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;30.0;40.0;30.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1134</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+hasEvolved
+fg=magenta
+layer=-5</panel_attributes>
+    <additional_attributes>10.0;30.0;50.0;30.0;50.0;10.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>774</x>
+      <y>1170</y>
+      <w>531</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>opt
+halign=left
+--
+hasEvolved</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>1197</y>
+      <w>243</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+updateDialogueStateChanged(this)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>972</x>
+      <y>1215</y>
+      <w>18</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>855</x>
+      <y>1233</y>
+      <w>207</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>alt
+halign=left
+--
+stato di
+entranceHandler
+è ACCEPTED
+
+--
+stato 
+REJECTED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>1287</y>
+      <w>684</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+roomEntranceCompleted(this)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>9</x>
+      <y>1296</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>*Operazioni GUI*
+La GUI mostra all'attore  le info sulla stanza
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>297</x>
+      <y>1305</y>
+      <w>18</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>1350</y>
+      <w>684</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+roomEntranceFailed(this)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>297</x>
+      <y>1368</y>
+      <w>18</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>1368</y>
+      <w>279</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>*Operazioni GUI*
+La GUI mostra all'attore un avviso e rimane nello stato precedente alla richiesta
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>1377</y>
+      <w>243</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+fg=magenta</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1386</y>
+      <w>396</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+fg=magenta</panel_attributes>
+    <additional_attributes>420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1593</x>
+      <y>1368</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>torna ad ascoltare sulla socket
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1593</x>
+      <y>1035</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ha ricevuto um msg roomEntranceReply
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>1440</y>
+      <w>630</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+updateMessageReceived(p2pMsg)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;680.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>972</x>
+      <y>1458</y>
+      <w>18</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>1458</y>
+      <w>684</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+roomUpdated(this)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>9</x>
+      <y>1467</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>*Operazioni GUI*
+La GUI aggiorna la visualizzazione della stanza
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>297</x>
+      <y>1476</y>
+      <w>18</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>
+fg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>1494</y>
+      <w>630</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+fg=magenta</panel_attributes>
+    <additional_attributes>680.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1593</x>
+      <y>1485</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>torna ad ascoltare sulla socket
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1593</x>
+      <y>1440</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ha ricevuto um msg roomUpdate
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1557</x>
+      <y>189</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Parte del DSD di connect() è già descritto in ServerRoom.run e non lo ripetiamo qui
+style=wordwrap
+fontsize=12
+bg=yellow
+layer=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>1305</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+setCurrentRoom(room)
+fg=magenta</panel_attributes>
+    <additional_attributes>10.0;30.0;40.0;30.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>990</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+setState(REQUESTED)</panel_attributes>
+    <additional_attributes>10.0;30.0;50.0;30.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>35</y>
+      <w>150</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-id: Int
+-name: String
+--
+_+createPlayer(RegisteredPlayer reg)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>245</x>
+      <y>155</y>
+      <w>230</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>_AutenticarsiController_
+--
+_-singleInstance: AutenticarsiController_
+--
+-new()
+_+getInstance(): AutenticarsiController_
+#initialize(): Bool
++registra(userName: String, email: String, password: String): Bool
++accedi(email: String, password: String): Player
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>85</y>
+      <w>215</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+player</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;60.0;410.0;60.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>275</x>
+      <y>260</y>
+      <w>240</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>WebClientConnection
+--
+ipAddress: InetAddress;
+port: Int;
+--
+_+new(ip: InetAddress, port: Int)_
+-initialize()
+-close()
+-sendRequest(req: WebRequest)
++verify(email: String, password: String): Player
++createUser(userName: String, email: String, password: String): Bool
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>215</y>
+      <w>50</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1=1
+webCliConn</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>380</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Socket
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>340</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+sock
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>415</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lw=1
+WebRequest
+--
+parameters: Object[]
+name: String
+--
+_+new(reqName: String)_
+_+getDummyRequest(): WebRequest_
++setParameters(par: Object[])
++isDummyRequest(): Bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>95</x>
+      <y>70</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>UnoXTutti
+--
+_+WEBSERVER_PORT: Int_
+_+WEBSERVER_IP: String_
+--
+_+main(args: String[])_
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>130</y>
+      <w>125</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; theAutCtrl</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;230.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>155</y>
+      <w>95</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; 
+singleInstance</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>430</y>
+      <w>65</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Serializable
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>85</y>
+      <w>15</w>
+      <h>355</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;690.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>435</x>
+      <y>435</y>
+      <w>105</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>796</x>
+      <y>100</y>
+      <w>220</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lw=3
+ServerRoom
+--
+
+--
+_-new(owner: Player, roomName: String)_
+_+createServerRoom(owner: Player, roomName: String, port: Int): ServerRoom_
++addPlayer(conn: P2PConnection)
++run()
++shouldClose()
+-shouldNotClose()
+-shouldIClose(): Bool
+-setClosed(closed: Bool)
++isClosed(): Bool
++waitOnClose(timeout: Long)
++forceClose()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>216</y>
+      <w>196</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>/Room/
+--
+_+roomEntranceRequestMsg = "roomEntranceRequest"_
+_+roomEntranceReplyMsg = "roomEntranceReply"_
+_+roomUpdateMsg = "roomUpdate"_
+_+roomExitMsg = "roomExit"_
+#name: String
+#host: InetAddress
+#port:Int
+--
+_#new(name: String, host: InetAddress, port: Int)_
+_#new(name: String)_
++getPlayerCount(): Int
++getPlayers(): ArrayList&lt;Player&gt;
++getInfo(): String
++setAddress(host: InetAddress)
++setPort(port: Int)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>260</y>
+      <w>120</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-id: Int
+-name: String
+--
+_+createPlayer(RegisteredPlayer reg)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>336</y>
+      <w>284</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>P2PConnection
+--
+-port: Long
+-boolean: server
+--
+_-new(sock: Socket, serverSide: Bool)_
+_+acceptConnectionRequest(ssock: ServerSocket): P2PConnection_
+_+connectToHost(who: Player, roomName: String, address: InetAddress, port: Int): P2PConnection_
++disconnect()
+-connect()
+-handshake(): Bool 
++addMessageReceivedObserver(rec: MessageReceiver, msgName: String)
++removeMessageReceivedObserver(rec: MessageReceiver, msgName: String)
+-notifyMessageReceived(msg: P2PMessage)
+-setClosed()
+-isClosing(): Bool
+-setClosing(closing: Bool)
++sendMessage(msg: String): Bool
++isClosed():Bool
++forceClose()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>76</x>
+      <y>132</y>
+      <w>276</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lw=1
+RemoteRoom
+--
+-host: InetAddress
+-port: Int
+--
+_+createRemoteRoom(player: Player, roomName: String, host: String, port: String): RemoteRoom_
+-enter()
++destroy(): Bool
++disconnect(): Bool
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>628</x>
+      <y>512</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lw=3
+P2PHelper
+--
+--
+_+new()_
++run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>220</y>
+      <w>204</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>_GiocareAUnoXTuttiController_
+--
+--
+_-new(pl: Player)_
+_+getInstance(aPlayer: Player): GiocareAUnoXTuttiController_
++apriStanza(roomName: String, port: Long): Room
++chiudiStanza(aRoom: RemoteRoom): Bool
++entraInStanza(roomName: String, address: String, port: Int)
++roomEntranceCompleted(r: RemoteRoom)
++roomEntranceFailed(r: RemoteRoom)
++roomUpdated(r: RemoteRoom)
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>388</x>
+      <y>112</y>
+      <w>416</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=0..n
+serverRooms</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;10.0;1020.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>188</y>
+      <w>160</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=0..n
+connections</panel_attributes>
+    <additional_attributes>300.0;10.0;300.0;390.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>156</y>
+      <w>312</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+connection</panel_attributes>
+    <additional_attributes>10.0;20.0;760.0;20.0;760.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>464</y>
+      <w>36</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m2=1
+myHelper</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>292</y>
+      <w>124</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1..1
+contains
+</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>136</y>
+      <w>400</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>980.0;200.0;980.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>280</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+player</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;200.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>272</y>
+      <w>124</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..1
+m2=0..n
+owner
+</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>300</y>
+      <w>28</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+player</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>268</x>
+      <y>356</y>
+      <w>184</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>_AutenticarsiController_
+--
+_-singleInstance: AutenticarsiController_
+--
+-new()
+_+getInstance(): AutenticarsiController_
+#initialize(): Bool
++registra(userName: String, email: String, password: String): Bool
++accedi(email: String, password: String): Player
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>300</y>
+      <w>172</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1
+player</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;60.0;410.0;60.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>292</x>
+      <y>440</y>
+      <w>192</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>WebClientConnection
+--
+ipAddress: InetAddress;
+port: Int;
+--
+_+new(ip: InetAddress, port: Int)_
+-initialize()
+-close()
+-sendRequest(req: WebRequest)
++verify(email: String, password: String): Player
++createUser(userName: String, email: String, password: String): Bool
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>404</y>
+      <w>44</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1=1
+webCliConn</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>796</x>
+      <y>504</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Runnable
+bg=cyan
+--
+/+run()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>536</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Socket
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>504</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+sock
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>184</y>
+      <w>44</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1=0..1
+currentRoom</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>452</x>
+      <y>532</y>
+      <w>184</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+sock
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>564</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lw=1
+WebRequest
+--
+parameters: Object[]
+name: String
+--
+_+new(reqName: String)_
+_+getDummyRequest(): WebRequest_
++setParameters(par: Object[])
++isDummyRequest(): Bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>148</x>
+      <y>288</y>
+      <w>84</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>UnoXTutti
+--
+_+WEBSERVER_PORT: Int_
+_+WEBSERVER_IP: String_
+--
+_+main(args: String[])_
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>236</y>
+      <w>68</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; theUxtCtrl</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>336</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; theAutCtrl</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;230.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>356</y>
+      <w>76</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; 
+singleInstance</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>292</x>
+      <y>196</y>
+      <w>68</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+&lt;&lt;static&gt;&gt; singleInstance</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;20.0;140.0;20.0;140.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>576</y>
+      <w>52</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Serializable
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>300</y>
+      <w>12</w>
+      <h>284</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;690.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>580</y>
+      <w>84</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>556</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lw=1
+P2PMessage
+--
+-name: String
+-parameters: Object[]
+--
+_+new(msgName: String)_
+_+createByeMessage(): P2PMessage_
++isByeMessage(): Bool
++setParameters(par: Object[])
++getParameter(index: Int): Object
++getParametersCount(): Int
++setSenderConnection(p2pc: P2PConnection)
++getSenderConnection(): P2PConnection
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>580</y>
+      <w>100</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>844</x>
+      <y>188</y>
+      <w>12</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>224</y>
+      <w>84</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>ServerSocket
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1012</x>
+      <y>132</y>
+      <w>64</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=0..1
+serverSock</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0;120.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>892</x>
+      <y>356</y>
+      <w>84</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>ObjectOutputStream
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>892</x>
+      <y>372</y>
+      <w>84</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>ObjectInputStream
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>368</y>
+      <w>68</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=0..1
+sockOut</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>352</y>
+      <w>68</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=0..1
+sockIn</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>876</x>
+      <y>188</y>
+      <w>116</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;840.0;270.0;840.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>516</y>
+      <w>84</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>464</y>
+      <w>12</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-(+)
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>552</y>
+      <w>156</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>/DialogueHandler&lt;T&gt;/
+--
+
+--
+-setState(state: T)
++getState(): T
++getStateChangeTrigger(): P2PMessage
++addStateChangeObserver(obs: DialogueObserver)
++removeStateChangeObserver(obs: DialogueObserver)
++updateMessageReceived(msg)
+-notifyStateChange()
+/-evolveState(msg: P2PMessage): Bool/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>552</y>
+      <w>48</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generic&gt;&gt; 
+T
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>452</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
+MessageReceiver
+--
+
+--
++updateMessageReceived(msg: P2PMessage)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>488</y>
+      <w>12</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>556</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+current
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>576</y>
+      <w>248</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+trigger
+m1=0..1
+m2=1
+</panel_attributes>
+    <additional_attributes>600.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>452</y>
+      <w>188</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=0..n
+receivers[msg]</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>796</x>
+      <y>708</y>
+      <w>128</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
+DialogueState&lt;U extends DialogueState&gt;
+--
++nextState(P2PMessage msg): U</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>796</x>
+      <y>664</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>BasicDialogueHandler&lt;U extends DialogueState&gt;
+--
+
+--
+-evolveState(msg: P2PMessage): Bool
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>608</y>
+      <w>180</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+T = U extends DialogueState</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0;430.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1024</x>
+      <y>620</y>
+      <w>36</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=0..n
+observers</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>956</x>
+      <y>660</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
+DialogueObserver
+--
+
+--
++updateDialogueStateChanged(source: DialogueHandler)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>444</y>
+      <w>112</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>RoomEnteringDialogueHandler
+--
+--
++startEntranceRequest(Player pl)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>476</y>
+      <w>660</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+U = RoomEnteringDialogueState
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;520.0;1630.0;520.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>692</y>
+      <w>184</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt; 
+RoomEnteringDialogueState
+--
+BEFORE_REQUEST, REQUESTED, ADMITTED, REJECTED
+(initial = BEFORE_REQUEST,
+BEFORE_REQUEST-(sent: roomEntranceRequested)-&gt;REQUESTED
+REQUESTED-(rec: roomEntranceAllowed)-&gt;ADMITTED
+REQUESTED-(rec: roomEntranceRejected)-&gt;REJECTED)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>716</y>
+      <w>552</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;
+U = RoomEnteringDialogueState
+</panel_attributes>
+    <additional_attributes>10.0;20.0;1360.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>92</x>
+      <y>184</y>
+      <w>56</w>
+      <h>268</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1=1
+entranceHandler</panel_attributes>
+    <additional_attributes>10.0;650.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>464</y>
+      <w>60</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+senderConnection</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1012</x>
+      <y>120</y>
+      <w>112</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;
+</panel_attributes>
+    <additional_attributes>260.0;830.0;260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

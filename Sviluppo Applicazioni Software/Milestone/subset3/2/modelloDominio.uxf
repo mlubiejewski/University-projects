@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>564</x>
+      <y>348</y>
+      <w>240</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Giocatore
+--
+Nome</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>648</y>
+      <w>120</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Stanza
+--
+Nome 
+Indirizzo
+Porta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1212</x>
+      <y>468</y>
+      <w>192</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Squadra
+--
+Nome
+NumPersone
+Aperta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>348</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>UtenteRegistrato
+--
+Nome
+Email
+Password</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>264</y>
+      <w>1056</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1
+&lt; E' gestita
+Gescisce &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;860.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>96</y>
+      <w>1152</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+&lt; Iscritti
+Fa Parte di &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;940.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>276</y>
+      <w>36</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1308</x>
+      <y>276</y>
+      <w>36</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1368</x>
+      <y>108</y>
+      <w>36</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;300.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>108</y>
+      <w>36</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>360</y>
+      <w>228</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+Is &gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>468</y>
+      <w>144</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+Partecipanti ^
+Partecipa v</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>468</y>
+      <w>144</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1
+
+
+
+
+
+
+Proprietario v
+E' gestita ^</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>924</y>
+      <w>120</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Partita
+--
+Nome
+NumGiocatori
+Modalità
+Aperta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>1164</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Manche
+--
+NomeManche
+NumeroManche
+Turno</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>336</y>
+      <w>696</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+E' presente in &gt;
+</panel_attributes>
+    <additional_attributes>10.0;20.0;560.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1464</x>
+      <y>348</y>
+      <w>372</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Classifica
+--
+TipoSoggetto
+TipoTemporale
+Punteggio</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>732</y>
+      <w>144</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n 
+
+
+E' Contenuta ^
+Contiene v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>1020</y>
+      <w>120</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n
+E' in ^
+Contiene v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>900</x>
+      <y>0</y>
+      <w>372</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Una squadra aperta ha almeno un iscritto.
+Una squadra chiusa ha 0 iscritti.
+Un giocatore può avere una squadra aperta,
+Un giocatore può anche avere n squadra chiuse.
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>516</y>
+      <w>180</w>
+      <h>444</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=0..n
+
+
+
+
+
+
+
+
+Proprietario ^
+E' Proprietario di v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>924</y>
+      <w>336</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>504</y>
+      <w>264</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>468</y>
+      <w>36</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>m1=1</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>432</y>
+      <w>132</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>90.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>960</y>
+      <w>156</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>444</y>
+      <w>120</w>
+      <h>564</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..1 
+Partecipa v
+Contiene ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>336</x>
+      <y>1056</y>
+      <w>324</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>La partita è aperta se non ha 
+raggiunto il numero massimo di giocatori,
+chiusa altrimenti.
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>312</y>
+      <w>36</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>204</x>
+      <y>312</y>
+      <w>564</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1</panel_attributes>
+    <additional_attributes>450.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>204</x>
+      <y>312</y>
+      <w>36</w>
+      <h>924</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;750.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>204</x>
+      <y>1188</y>
+      <w>480</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=0..n
+Vince &gt;
+&lt; E' Vinta</panel_attributes>
+    <additional_attributes>10.0;20.0;380.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>720</y>
+      <w>720</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1464</x>
+      <y>432</y>
+      <w>144</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+Osserva ^
+E' Osservata v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>432</y>
+      <w>144</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+Restituisce ^
+E' contenuta v</panel_attributes>
+    <additional_attributes>10.0;480.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>996</y>
+      <w>948</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;770.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>1584</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Tavolo
+--
+CartaInCima
+CartaDaPescare</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>1932</y>
+      <w>300</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Carta
+--
+Tipo
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>2040</y>
+      <w>36</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>2172</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Carta base
+--
+Colore
+Numero
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>2172</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Carta Azione
+--
+Effetto
+Colore
+Tipo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>2172</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Carta Jolly
+--
+Effetto
+Tipo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>732</x>
+      <y>2064</y>
+      <w>156</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>[Generalizzazione]
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>852</x>
+      <y>1272</y>
+      <w>228</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>La Manche non è collegata
+con la classifica, perchè 
+essa ritorna solo il risultato
+della singola manche, e non 
+quello totale.
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>2088</y>
+      <w>516</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;410.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>2100</y>
+      <w>36</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>2100</y>
+      <w>36</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>2100</y>
+      <w>36</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>1248</y>
+      <w>120</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+E' in ^
+Contiene v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>444</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>456</y>
+      <w>396</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>m1=1</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>480</y>
+      <w>36</w>
+      <h>1548</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;1270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>1980</y>
+      <w>456</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1..n
+Possiede &gt;
+&lt; In mano di </panel_attributes>
+    <additional_attributes>10.0;20.0;360.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>672</y>
+      <w>144</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Risultato
+--
+Punteggio</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>468</y>
+      <w>180</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1
+Appartiene ^
+Ottiene v</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;130.0;10.0;130.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>768</y>
+      <w>168</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n
+Appartiene &gt;
+&lt; Genera</panel_attributes>
+    <additional_attributes>120.0;130.0;120.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>492</y>
+      <w>144</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n
+E' osservata ^
+Osserva v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>948</y>
+      <w>432</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>480</y>
+      <w>348</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>564</x>
+      <y>468</y>
+      <w>36</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>192</y>
+      <w>828</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..n
+Osserva &gt;
+&lt; Viene osservata
+</panel_attributes>
+    <additional_attributes>10.0;20.0;670.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>204</y>
+      <w>36</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>204</y>
+      <w>36</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>492</y>
+      <w>432</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+E' presente in &gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1788</x>
+      <y>432</y>
+      <w>36</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>1128</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Punteggio
+--
+Valore</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>1152</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n
+Calcola &gt;
+&lt; Appartiene</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1068</x>
+      <y>432</y>
+      <w>132</w>
+      <h>720</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=0..n 
+Guadagna v
+Appartiene ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>432</y>
+      <w>312</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>m2=1</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>396</y>
+      <w>432</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1188</x>
+      <y>408</y>
+      <w>120</w>
+      <h>852</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..1 
+Partecipa v
+Contiene ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>1212</y>
+      <w>432</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>1668</y>
+      <w>120</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+E' sul ^
+Contiene v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>1620</y>
+      <w>144</w>
+      <h>396</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1
+CartaInCima &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>1620</y>
+      <w>252</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>1968</y>
+      <w>180</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+</diagram>

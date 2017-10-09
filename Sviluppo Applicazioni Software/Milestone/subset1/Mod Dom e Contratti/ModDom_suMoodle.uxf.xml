@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>250</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Stanza
+--
+nome
+indirizzo
+porta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>260</y>
+      <w>250</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+gestisce &gt;
+&lt; proprietario</panel_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>270</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Giocatore
+--
+nome
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>320</y>
+      <w>440</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+partecipa &gt;
+&lt; partecipanti</panel_attributes>
+    <additional_attributes>400.0;10.0;400.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>270</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>GiocatoreRegistrato
+--
+nome utente
+nome account
+password
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>290</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..1	</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>70</y>
+      <w>110</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Squadra
+--
+nome
+aperta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>100</y>
+      <w>140</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+possiede ^
+proprietario v
+
+</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>100</y>
+      <w>320</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+iscritto a ^
+ha iscritti v
+</panel_attributes>
+    <additional_attributes>120.0;10.0;220.0;10.0;220.0;120.0;10.0;120.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>580</x>
+      <y>50</y>
+      <w>260</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Una Squadra /aperta/ ha 1..n /iscritti/, altrimenti ne ha 0.
+--
+Un Giocatore puo' /possedere/ al massimo 1 Squadra /aperta/ ma può averne anche n di chiuse
+--
+NDR non trovo il modo di scrivere in corsivo...uso le // per indicarlo
+style=wordwrap
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
